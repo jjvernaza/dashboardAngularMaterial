@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Agregar Plan de Fibra Óptica</h2>
+
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="ID PLAN" [(ngModel)]="nuevoPlanFibraOptica.idPlan">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="PLAN MB" [(ngModel)]="nuevoPlanFibraOptica.planMB">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="VALOR DEL PLAN" [(ngModel)]="nuevoPlanFibraOptica.valorPlan">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button (click)="agregarPlanFibraOptica()">Agregar</button>
+</mat-dialog-actions>

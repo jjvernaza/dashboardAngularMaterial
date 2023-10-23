@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Agregar Master User de VozIpCompany</h2>
+
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="ID" [(ngModel)]="nuevoMasterUser.id">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="CC" [(ngModel)]="nuevoMasterUser.cc">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Nombre" [(ngModel)]="nuevoMasterUser.nombre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Apellidos" [(ngModel)]="nuevoMasterUser.apellidos">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cargo" [(ngModel)]="nuevoMasterUser.cargo">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Usuario" [(ngModel)]="nuevoMasterUser.usuario">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Contraseña" [(ngModel)]="nuevoMasterUser.contrasena">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button (click)="agregarMasterUser()">Agregar</button>
+</mat-dialog-actions>

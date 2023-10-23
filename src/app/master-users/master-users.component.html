@@ -1,0 +1,63 @@
+
+
+<mat-form-field id="searchField">
+  <mat-label>Buscar</mat-label>
+  <input matInput (input)="aplicarFiltro($event)" id="buscarInput" placeholder="Buscar...">
+  <button mat-icon-button matSuffix id="buscarButton">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>
+
+<button mat-raised-button (click)="abrirModalAgregarMasterUser()" id="agregarButton">+ Agregar Master User</button>
+
+<mat-table [dataSource]="masterUsers">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef id="idHeader">ID</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="idCell">{{ user.id }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cc">
+    <mat-header-cell *matHeaderCellDef id="ccHeader">CC</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="ccCell">{{ user.cc }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef id="nombreHeader">NOMBRE</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="nombreCell">{{ user.nombre }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="apellidos">
+    <mat-header-cell *matHeaderCellDef id="apellidosHeader">APELLIDOS</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="apellidosCell">{{ user.apellidos }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cargo">
+    <mat-header-cell *matHeaderCellDef id="cargoHeader">CARGO</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="cargoCell">{{ user.cargo }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="usuario">
+    <mat-header-cell *matHeaderCellDef id="usuarioHeader">USUARIO</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="usuarioCell">{{ user.usuario }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="contrasena">
+    <mat-header-cell *matHeaderCellDef id="contrasenaHeader">CONTRASEÑA</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="contrasenaCell">{{ user.contrasena }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef id="accionesHeader">ACCIONES</mat-header-cell>
+    <mat-cell *matCellDef="let user" id="accionesCell">
+      <button mat-icon-button (click)="editarMasterUser(user)" id="editIcon">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="eliminarMasterUser(user)" id="deleteIcon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

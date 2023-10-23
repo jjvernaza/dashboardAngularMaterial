@@ -1,0 +1,89 @@
+<h2>VOZIPCOMPANY & ICTLATAM PLANES WLAN</h2>
+
+<mat-form-field id="searchField">
+    <mat-label>Buscar</mat-label>
+    <input matInput (input)="aplicarFiltro($event)" id="buscarInputs" placeholder="Buscar...">
+    <button mat-icon-button matSuffix id="buscarButtons">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+  
+
+<button mat-raised-button (click)="abrirModalAgregarPlanWLAN()" id="agregarPlanWLANButton">+ Agregar Plan WLAN</button>
+
+<mat-table [dataSource]="planesWLAN">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let plan">{{ plan.id }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="planMB">
+    <mat-header-cell *matHeaderCellDef>Plan MB</mat-header-cell>
+    <mat-cell *matCellDef="let plan">{{ plan.planMB }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="valorPlan">
+    <mat-header-cell *matHeaderCellDef>Valor del Plan</mat-header-cell>
+    <mat-cell *matCellDef="let plan">{{ plan.valorPlan }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef>ACCIONES</mat-header-cell>
+    <mat-cell *matCellDef="let plan">
+      <button mat-icon-button (click)="editarPlan(plan)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="eliminarPlan(plan)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<h2>VOZIPCOMPANY & ICTLATAM PLANES FIBRA OPTICA</h2>
+
+<mat-form-field id="searchField">
+    <mat-label>Buscar</mat-label>
+    <input matInput (input)="aplicarFiltro($event)" id="buscarInput" placeholder="Buscar...">
+    <button mat-icon-button matSuffix id="buscarButton">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+  
+
+<button mat-raised-button (click)="abrirModalAgregarPlanFibraOptica()" id="agregarPlanFibraOpticaButton">+ Agregar Plan Fibra Óptica</button>
+
+<mat-table [dataSource]="planesFibraOptica">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let plan">{{ plan.id }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="planMB">
+    <mat-header-cell *matHeaderCellDef>Plan MB</mat-header-cell>
+    <mat-cell *matCellDef="let plan">{{ plan.planMB }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="valorPlan">
+    <mat-header-cell *matHeaderCellDef>Valor del Plan</mat-header-cell>
+    <mat-cell *matCellDef="let plan">{{ plan.valorPlan }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef>ACCIONES</mat-header-cell>
+    <mat-cell *matCellDef="let plan">
+      <button mat-icon-button (click)="editarPlan(plan)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="eliminarPlan(plan)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

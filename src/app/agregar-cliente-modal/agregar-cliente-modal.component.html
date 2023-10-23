@@ -1,0 +1,52 @@
+<h2>Agregar Usuario</h2>
+
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="ID" [(ngModel)]="nuevoCliente.id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="CC" [(ngModel)]="nuevoCliente.cc">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Nombre" [(ngModel)]="nuevoCliente.nombre">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Apellidos" [(ngModel)]="nuevoCliente.apellidos">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="PLAN MB" [(ngModel)]="nuevoCliente.planMB">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="TIPO DE SERVICIO" [(ngModel)]="nuevoCliente.tipoServicio">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="IP ADDRESS" [(ngModel)]="nuevoCliente.ipAddress">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="TELEFONO" [(ngModel)]="nuevoCliente.telefono">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="FECHA DE INSTALACION" [(ngModel)]="nuevoCliente.fechaInstalacion">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="UBICACION" [(ngModel)]="nuevoCliente.ubicacion">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="ACTIVO/INACTIVO" [(ngModel)]="nuevoCliente.activoInactivo">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button (click)="agregarCliente()">Agregar</button>
+</mat-dialog-actions>

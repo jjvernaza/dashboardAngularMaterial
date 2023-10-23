@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Agregar Plan WLAN</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="ID PLAN" [(ngModel)]="nuevoPlanWLAN.idPlan">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="PLAN MB" [(ngModel)]="nuevoPlanWLAN.planMB">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="VALOR DEL PLAN" [(ngModel)]="nuevoPlanWLAN.valorPlan">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button (click)="agregarPlanWLAN()">Agregar</button>
+</mat-dialog-actions>

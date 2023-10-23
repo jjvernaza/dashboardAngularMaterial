@@ -1,0 +1,24 @@
+/* Estilo personalizado para el campo de búsqueda */
+.mat-form-field {
+    width: 100%; /* Ancho del 100% para llenar el contenedor */
+    max-width: 400px; /* Ajusta el ancho máximo según tus preferencias */
+  }
+  
+/* Estilo para el campo de búsqueda */
+#searchField {
+  width: 100%; /* Ancho del 100% para llenar el contenedor */
+  max-width: 400px; /* Ajusta el ancho máximo según tus preferencias */
+  margin-bottom: 20px; /* Espacio entre el campo de búsqueda y el botón de búsqueda */
+}
+
+#agregarButton {
+margin-left: 30px;
+width: 100%; /* Ancho del 100% para llenar el contenedor */
+max-width: 400px;
+}
+
+/* Estilos para las celdas de la tabla */
+[id$="Header"] {
+  font-weight: bold;
+}
+

@@ -1,0 +1,82 @@
+<mat-form-field id="searchField">
+  <mat-label>Buscar</mat-label>
+  <input matInput (input)="aplicarFiltro($event)" id="buscarInput" placeholder="Buscar...">
+  <button mat-icon-button matSuffix id="buscarButton">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>
+
+
+<button mat-raised-button (click)="abrirModalAgregarUsuario()" id="agregarButton">+ Agregar Usuario</button>
+
+<mat-table [dataSource]="clientes">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef id="idHeader">ID</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="idCell">{{ cliente.id }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cc">
+    <mat-header-cell *matHeaderCellDef id="ccHeader">CC</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="ccCell">{{ cliente.cc }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef id="nombreHeader">NOMBRE</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="nombreCell">{{ cliente.nombre }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="apellidos">
+    <mat-header-cell *matHeaderCellDef id="apellidosHeader">APELLIDOS</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="apellidosCell">{{ cliente.apellidos }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="planMB">
+    <mat-header-cell *matHeaderCellDef id="planMBHeader">PLAN MB</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="planMBCell">{{ cliente.planMB }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tipoServicio">
+    <mat-header-cell *matHeaderCellDef id="tipoServicioHeader">TIPO DE SERVICIO</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="tipoServicioCell">{{ cliente.tipoServicio }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ipAddress">
+    <mat-header-cell *matHeaderCellDef id="ipAddressHeader">IP ADDRESS</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="ipAddressCell">{{ cliente.ipAddress }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="telefono">
+    <mat-header-cell *matHeaderCellDef id="telefonoHeader">TELEFONO</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="telefonoCell">{{ cliente.telefono }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="fechaInstalacion">
+    <mat-header-cell *matHeaderCellDef id="fechaInstalacionHeader">FECHA DE INSTALACION</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="fechaInstalacionCell">{{ cliente.fechaInstalacion }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ubicacion">
+    <mat-header-cell *matHeaderCellDef id="ubicacionHeader">UBICACION</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="ubicacionCell">{{ cliente.ubicacion }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="activoInactivo">
+    <mat-header-cell *matHeaderCellDef id="activoInactivoHeader">ACTIVO/INACTIVO</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="activoInactivoCell">{{ cliente.activoInactivo }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef id="accionesHeader">ACCIONES</mat-header-cell>
+    <mat-cell *matCellDef="let cliente" id="accionesCell">
+      <button mat-icon-button (click)="editarCliente(cliente)">
+        <mat-icon id="editIcon">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="eliminarCliente(cliente)">
+        <mat-icon id="deleteIcon">delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
